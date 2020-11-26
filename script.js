@@ -23,13 +23,15 @@ function searchInput(query) {
     fetch(url)
     .then(response => response.json(response))
     .then(result => showResults(result.hits));
+    // .then(result => console.log(result.hits));
+    
 };
 
 function showResults (result) {
     
     result.forEach(result => {
         var resultDiv = document.getElementById("div");
-        resultDiv.innerHTML = "";
+        // resultDiv.innerHTML = "";
 
         var image = document.createElement("img");
         image.src = result.largeImageURL;
