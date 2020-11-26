@@ -31,7 +31,7 @@ function showResults (result) {
     
     result.forEach(result => {
         var resultDiv = document.getElementById("div");
-        // resultDiv.innerHTML = "";
+        resultDiv.innerHTML = "";
 
         var image = document.createElement("img");
         image.src = result.largeImageURL;
