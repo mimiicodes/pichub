@@ -28,10 +28,11 @@ function searchInput(query) {
 };
 
 function showResults (result) {
+    var resultDiv = document.getElementById("div");
+        resultDiv.innerHTML = "";
     
     result.forEach(result => {
-        var resultDiv = document.getElementById("div");
-        resultDiv.innerHTML = "";
+        
 
         var image = document.createElement("img");
         image.src = result.largeImageURL;
