@@ -33,9 +33,14 @@ input{
     outline: none;
     font-family: 'Epilogue', sans-serif;
 }
-
+.linear-gradient{
+    background: -webkit-linear-gradient(purple, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 input:hover{
-    border: 2px solid cornflowerblue;
+    border: 1px solid white;
 }
 
 button{
