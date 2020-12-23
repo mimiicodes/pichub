@@ -17,22 +17,25 @@
 // getApi();
 // form.addEventListener("submit", getApi);
 
+function changeHtml() {
+    window.location.replace("main.html")
+}
+
+
 function searchInput(query) {
     const API_KEY = "15764634-c763f05961fbc2ca2ec73632b";
-    const url = `https://pixabay.com/api/?key=${API_KEY}&q=${query}&image_type=photo&pretty=true&per_page=30`;
+    const url = `https://pixabay.com/api/?key=${API_KEY}&q=${query}&image_type=photo&pretty=true&per_page=200`;
     fetch(url)
     .then(response => response.json(response))
     .then(result => showResults(result.hits));
     // .then(result => console.log(result.hits));
-    
 };
-
 function showResults (result) {
+
     var resultDiv = document.getElementById("div");
-        resultDiv.innerHTML = "";
-    
+    resultDiv.innerHTML = "";
+
     result.forEach(result => {
-        
 
         var image = document.createElement("img");
         image.src = result.largeImageURL;
@@ -40,21 +43,23 @@ function showResults (result) {
         var eachResultDiv = document.createElement("div");
         eachResultDiv.className = "each";
 
-        var numberOfDownloads = document.createElement('h5');
-        numberOfDownloads.innerText = "Number of downloads: " + result.downloads;
+        // var numberOfDownloads = document.createElement('h5');
+        // numberOfDownloads.innerText = "Number of downloads: " + result.downloads;
 
-        var numberOfLikes = document.createElement('h5');
-        numberOfLikes.innerText = "Number of Likes: " + result.likes;
+        // var numberOfLikes = document.createElement('h5');
+        // numberOfLikes.innerText = "Number of Likes: " + result.likes;
 
-        var tags = document.createElement('h5');
-        tags.innerText = "Tags: " + result.tags;
+        // var tags = document.createElement('h5');
+        // tags.innerText = "Tags: " + result.tags;
 
         resultDiv.appendChild(eachResultDiv);
         eachResultDiv.appendChild(image);
-        eachResultDiv.appendChild(numberOfDownloads);
-        eachResultDiv.appendChild(numberOfLikes);
-        eachResultDiv.appendChild(tags);
+        // eachResultDiv.appendChild(numberOfDownloads);
+        // eachResultDiv.appendChild(numberOfLikes);
+        // eachResultDiv.appendChild(tags);
+        
     });
+ 
 };
 
 window.onload = () => {
@@ -64,5 +69,11 @@ window.onload = () => {
     btn.addEventListener("click", function (e) {
         e.preventDefault();
         searchInput(input.value);
+
+        if(input.value == "" || null){
+       
+            alert("No image Found!" );
+            //window.location.href = window.location.href;
+        }
     })
 }

@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <title>PicHub</title>
 </head>
 <body>
-    <div class="intro" id="intro">
-        <h1>Welcome to PicHub!</h1>
-        <p>Glad to have you. Here you can search for pictures of any kind. Just describe it.</p>
+    <div class="container">
+        <div class="inner">
+            <h1 class="a">Welcome to <span class="linear-gradient">Cubes</span></h1>
+            <p class="b">Search, View and Download free Photos for your Project</p>
+            <button class="c" onclick="changeHtml()">Get Started</button>
+        </div>
     </div>
-    <form action="" method="get" id="form">
-        <input placeholder='Search a pic...' autocomplete="off" type="search" name="search" id="searchinput" required>
-        <button type="submit" name="searchbutton" id="btn">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-    </form>
-    <div id="div"></div>
     <script src="script.js"></script>
 </body>
 </html>
-
