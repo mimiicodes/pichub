@@ -90,6 +90,12 @@ h5{
         object-fit: cover;
     }
 } */
+.hidden{
+    display: none;
+}
+.nrtext{
+    text-align: center;
+}
 
 @media screen and (max-width: 768px) {
     body{

@@ -27,7 +27,8 @@ function searchInput(query) {
     const url = `https://pixabay.com/api/?key=${API_KEY}&q=${query}&image_type=photo&pretty=true&per_page=200`;
     fetch(url)
     .then(response => response.json(response))
-    .then(result => showResults(result.hits));
+    .then(result => { showResults (result.hits)
+    });
     // .then(result => console.log(result.hits));
 };
 function showResults (result) {
@@ -59,7 +60,12 @@ function showResults (result) {
         // eachResultDiv.appendChild(tags);
         
     });
- 
+    if (result == "" || null) {
+        // console.log("Results not found!")
+        var nf = document.querySelector(".nrtext");
+        nf.classList.remove("hidden");
+    };
+
 };
 
 window.onload = () => {
